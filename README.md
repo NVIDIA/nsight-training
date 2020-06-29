@@ -29,7 +29,7 @@ structured into steps that build on each other, but it is possible to start at a
 each one will contain all previous exercise content (e.g. all bugs are fixed in the first
 performance analysis exercise).
 
-This exercise uses NVIDIA® NsightTM Eclipse Edition but all steps can be completed when
+This exercise uses NVIDIA® Nsight™ Eclipse Edition but all steps can be completed when
 compiling and running directly from the command line. These steps are marked as “CLI
 Alternative” below.
 
