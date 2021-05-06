@@ -1,2 +1,0 @@
-include:
-  - "https://nvidia.gitlab.io/dli/platform/cicd/pebble-cicd/pipeline/pebble-v1.0/gitlab-ci.yml"
