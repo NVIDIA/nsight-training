@@ -1,0 +1,10 @@
+Dockerfile
+.launchignore
+.dockerignore
+.gitignore
+vm_properties.json
+entrypoint.sh
+**/.nfs**
+**/.ipynb_checkpoints
+task/encrypted
+NVIDIA_Nsight_Graphics_2021.1.1.21054.run
