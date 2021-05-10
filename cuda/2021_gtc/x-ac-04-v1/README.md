@@ -35,6 +35,6 @@ https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.
 
 In the current folder, run `docker-compose up -d`. This will build and start the
 needed docker containers. Once the containers are started, you can access the
-lab instruction by accessing http://127.0.0.1:9876/lab/ in your browser.
+lab instruction by accessing http://127.0.0.1:9333/lab/ in your browser.
 When you are finished you can run `docker-compose down` to stop the
 containers.
