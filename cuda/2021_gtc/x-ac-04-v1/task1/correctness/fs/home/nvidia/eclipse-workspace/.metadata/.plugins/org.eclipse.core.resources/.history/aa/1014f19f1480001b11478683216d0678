@@ -1,0 +1,52 @@
+#include <iostream>
+#include <cuda_runtime.h>
+
+
+#define gpuErrchk(ans) gpuAssert((ans), __FILE__, __LINE__)
+inline void gpuAssert(cudaError_t code, const char *file, int line, bool abort=true)
+{
+    if (code != cudaSuccess)
+    {
+        fprintf(stderr,"GPUassert: %s %s %d\n", cudaGetErrorString(code), file, line);
+        if (abort) exit(code);
+    }
+}
+
+__global__ void sum(int* a, int* b, int* c)
+{
+    c[blockIdx.x] = a[blockIdx.x] + b[blockIdx.x];
+    printf("blockIdx.x: %i\n", blockIdx.x);
+}
+
+int main()
+{
+    cudaFree(nullptr);
+
+    int h_a[] = {0, 1, 2, 3};
+    int h_b[] = {0, 1, 2, 3};
+    int h_c[] = {0, 0, 0, 1};
+
+
+    int* d_a;
+    int* d_b;
+    int* d_c;
+
+    gpuErrchk(cudaMalloc(&d_a, sizeof(h_a)));
+    gpuErrchk(cudaMemcpy(d_a, h_a, sizeof(h_a), cudaMemcpyHostToDevice));
+    gpuErrchk(cudaMalloc(&d_b, sizeof(h_b)));
+    gpuErrchk(cudaMemcpy(d_b, h_b, sizeof(h_b), cudaMemcpyHostToDevice));
+    gpuErrchk(cudaMalloc(&d_c, sizeof(h_c)));
+    gpuErrchk(cudaMemcpy(d_c, h_c, sizeof(h_b), cudaMemcpyHostToDevice));
+
+    sum<<<dim3(sizeof(h_a) / sizeof(int), 1, 1), dim3(1, 1, 1)>>>(d_a, d_b, d_c);
+
+    gpuErrchk(cudaDeviceSynchronize());
+
+    gpuErrchk(cudaMemcpy(h_c, d_c, sizeof(h_c), cudaMemcpyDeviceToHost));
+
+    for (auto i = 0; i < sizeof(h_c) / sizeof(int); ++i) {
+        printf("h_c[%i]: %i\n", i, h_c[i]);
+    }
+
+    return 0;
+}

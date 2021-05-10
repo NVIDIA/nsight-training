@@ -1,0 +1,1240 @@
+15:06:39 **** Build of configuration Debug for project common ****
+make all 
+Building file: ../src/common.c
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "src/common.o" "../src/common.c"
+Finished building: ../src/common.c
+ 
+Building target: libcommon.a
+Invoking: NVCC archiver
+/usr/local/cuda/bin/nvcc  -lib -o "libcommon.a"  ./src/common.o 
+Finished building target: libcommon.a
+ 
+15:07:32 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -L"/home/nvidia/eclipse-workspace/common/Debug" -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lcommon
+Finished building target: cuda-greyscale
+ 
+15:07:43 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+15:09:48 **** Clean-only build of configuration Debug for project common ****
+make clean 
+rm  ./src/common.o  libcommon.a
+ 
+15:09:48 **** Clean-only build of configuration Debug for project cuda-greyscale ****
+make clean 
+rm  ./main.o  cuda-greyscale
+ 
+15:09:58 **** Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc -I"/home/nvidia/eclipse-workspace/common/include" --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -L"/home/nvidia/eclipse-workspace/common/Debug" -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lcommon
+/usr/bin/ld: cannot find -lcommon
+collect2: error: ld returned 1 exit status
+makefile:23: recipe for target 'cuda-greyscale' failed
+make: *** [cuda-greyscale] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+15:10:24 **** Build of configuration Debug for project common ****
+make all 
+Building file: ../src/common.c
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "src/common.o" "../src/common.c"
+Finished building: ../src/common.c
+ 
+Building target: libcommon.a
+Invoking: NVCC archiver
+/usr/local/cuda/bin/nvcc  -lib -o "libcommon.a"  ./src/common.o 
+Finished building target: libcommon.a
+ 
+15:10:27 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -L"/home/nvidia/eclipse-workspace/common/Debug" -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lcommon
+Finished building target: cuda-greyscale
+ 
+15:10:30 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+15:10:35 **** Clean-only build of configuration Debug for project common ****
+make clean 
+rm  ./src/common.o  libcommon.a
+ 
+15:10:35 **** Clean-only build of configuration Debug for project cuda-greyscale ****
+make clean 
+rm  ./main.o  cuda-greyscale
+ 
+15:10:39 **** Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc -I"/home/nvidia/eclipse-workspace/common/include" --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -L"/home/nvidia/eclipse-workspace/common/Debug" -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lcommon
+/usr/bin/ld: cannot find -lcommon
+collect2: error: ld returned 1 exit status
+makefile:23: recipe for target 'cuda-greyscale' failed
+make: *** [cuda-greyscale] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+15:14:15 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc -I"/home/nvidia/eclipse-workspace/common/include" --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+/home/nvidia/eclipse-workspace/common/include/common/common.h(14): error: identifier "png_byte" is undefined
+
+/home/nvidia/eclipse-workspace/common/include/common/common.h(15): error: identifier "png_byte" is undefined
+
+/home/nvidia/eclipse-workspace/common/include/common/common.h(17): error: identifier "png_structp" is undefined
+
+/home/nvidia/eclipse-workspace/common/include/common/common.h(18): error: identifier "png_infop" is undefined
+
+/home/nvidia/eclipse-workspace/common/include/common/common.h(20): error: identifier "png_bytep" is undefined
+
+5 errors detected in the compilation of "../main.cu".
+make: *** [main.o] Error 1
+subdir.mk:15: recipe for target 'main.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+15:15:09 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc -I"/home/nvidia/eclipse-workspace/common/include" --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+/home/nvidia/eclipse-workspace/common/include/common/common.h(13): error: invalid redeclaration of type name "png_image"
+/usr/include/libpng/png.h(2739): here
+
+1 error detected in the compilation of "../main.cu".
+subdir.mk:15: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+15:16:02 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc -I"/home/nvidia/eclipse-workspace/common/include" --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -L"/home/nvidia/eclipse-workspace/common/Debug" -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lcommon
+/usr/bin/ld: cannot find -lcommon
+collect2: error: ld returned 1 exit status
+makefile:23: recipe for target 'cuda-greyscale' failed
+make: *** [cuda-greyscale] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+15:17:29 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(23): error: identifier "abort_" is undefined
+
+../main.cu(25): error: argument of type "char *" is incompatible with parameter of type "png_const_bytep"
+
+../main.cu(26): error: identifier "abort_" is undefined
+
+../main.cu(30): error: identifier "png_ptr" is undefined
+
+../main.cu(33): error: identifier "abort_" is undefined
+
+../main.cu(35): error: identifier "info_ptr" is undefined
+
+../main.cu(37): error: identifier "abort_" is undefined
+
+../main.cu(40): error: identifier "abort_" is undefined
+
+../main.cu(47): error: identifier "width" is undefined
+
+../main.cu(48): error: identifier "height" is undefined
+
+../main.cu(49): error: identifier "color_type" is undefined
+
+../main.cu(50): error: identifier "bit_depth" is undefined
+
+../main.cu(52): error: identifier "number_of_passes" is undefined
+
+../main.cu(58): error: identifier "abort_" is undefined
+
+../main.cu(60): error: identifier "row_pointers" is undefined
+
+../main.cu(61): error: identifier "y" is undefined
+
+../main.cu(61): error: expected a ">"
+
+../main.cu(75): error: identifier "abort_" is undefined
+
+../main.cu(79): error: identifier "png_ptr" is undefined
+
+../main.cu(82): error: identifier "abort_" is undefined
+
+../main.cu(84): error: identifier "info_ptr" is undefined
+
+../main.cu(86): error: identifier "abort_" is undefined
+
+../main.cu(89): error: identifier "abort_" is undefined
+
+../main.cu(96): error: identifier "abort_" is undefined
+
+../main.cu(98): error: identifier "width" is undefined
+
+../main.cu(98): error: identifier "height" is undefined
+
+../main.cu(99): error: identifier "bit_depth" is undefined
+
+../main.cu(99): error: identifier "color_type" is undefined
+
+../main.cu(107): error: identifier "abort_" is undefined
+
+../main.cu(109): error: identifier "row_pointers" is undefined
+
+../main.cu(114): error: identifier "abort_" is undefined
+
+../main.cu(119): error: identifier "y" is undefined
+
+../main.cu(119): error: expected a ">"
+
+33 errors detected in the compilation of "../main.cu".
+subdir.mk:15: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+15:23:55 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   
+./main.o: In function `main':
+/home/nvidia/eclipse-workspace/cuda-greyscale/Debug/../main.cu:30: undefined reference to `png_image_begin_read_from_file'
+collect2: error: ld returned 1 exit status
+makefile:23: recipe for target 'cuda-greyscale' failed
+make: *** [cuda-greyscale] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+15:24:26 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+15:24:30 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+15:36:30 **** Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(37): error: a value of type "void *" cannot be used to initialize an entity of type "png_bytep"
+
+../main.cu(47): error: expected a member name
+
+../main.cu(47): error: expression must have class type
+
+../main.cu(47): error: identifier "h_a" is undefined
+
+4 errors detected in the compilation of "../main.cu".
+subdir.mk:15: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+15:37:25 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(37): error: a value of type "void *" cannot be used to initialize an entity of type "png_bytep"
+
+1 error detected in the compilation of "../main.cu".
+subdir.mk:15: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+15:37:49 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+15:37:55 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+15:45:07 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(18): warning: expression has no effect
+
+../main.cu(19): error: expected a ";"
+
+1 error detected in the compilation of "../main.cu".
+make: *** [main.o] Error 1
+subdir.mk:15: recipe for target 'main.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+15:45:32 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+15:45:41 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+15:52:05 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(18): error: expression must have integral or unscoped enum type
+
+1 error detected in the compilation of "../main.cu".
+make: *** [main.o] Error 1
+subdir.mk:15: recipe for target 'main.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+15:53:46 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(52): error: identifier "sum" is undefined
+
+1 error detected in the compilation of "../main.cu".
+subdir.mk:15: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+15:54:11 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(52): error: argument of type "png_bytep" is incompatible with parameter of type "char **"
+
+1 error detected in the compilation of "../main.cu".
+make: *** [main.o] Error 1
+subdir.mk:15: recipe for target 'main.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+15:54:29 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+15:54:39 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+15:55:33 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+15:55:38 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+15:56:06 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+15:56:10 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+15:57:32 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+16:01:40 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(20): error: identifier "row_pointers" is undefined
+
+../main.cu(57): error: argument of type "char **" is incompatible with parameter of type "char *"
+
+2 errors detected in the compilation of "../main.cu".
+make: *** [main.o] Error 1
+subdir.mk:15: recipe for target 'main.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+16:02:15 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(20): error: a value of type "png_byte" cannot be used to initialize an entity of type "png_byte *"
+
+../main.cu(57): error: argument of type "char **" is incompatible with parameter of type "png_bytep"
+
+2 errors detected in the compilation of "../main.cu".
+make: *** [main.o] Error 1
+subdir.mk:15: recipe for target 'main.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+16:02:40 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(20): error: a value of type "png_byte" cannot be used to initialize an entity of type "png_byte *"
+
+../main.cu(57): error: argument of type "void *" is incompatible with parameter of type "png_bytep"
+
+2 errors detected in the compilation of "../main.cu".
+subdir.mk:15: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+16:03:42 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(20): error: a value of type "png_byte" cannot be used to initialize an entity of type "png_bytep"
+
+1 error detected in the compilation of "../main.cu".
+subdir.mk:15: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+16:04:13 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(20): error: a value of type "png_byte" cannot be used to initialize an entity of type "png_bytep"
+
+../main.cu(21): error: a value of type "png_byte *" cannot be used to initialize an entity of type "png_byte"
+
+../main.cu(22): error: expression must have pointer-to-object type
+
+../main.cu(22): error: expression must have pointer-to-object type
+
+../main.cu(22): error: expression must have pointer-to-object type
+
+../main.cu(23): error: expression must have pointer-to-object type
+
+../main.cu(24): error: expression must have pointer-to-object type
+
+../main.cu(25): error: expression must have pointer-to-object type
+
+8 errors detected in the compilation of "../main.cu".
+subdir.mk:15: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+16:05:12 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+16:05:18 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+13:25:11 **** Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(57): error: a value of type "png_byte" cannot be used to initialize an entity of type "png_byte *"
+
+1 error detected in the compilation of "../main.cu".
+make: *** [main.o] Error 1
+subdir.mk:15: recipe for target 'main.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+13:29:22 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+13:30:04 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(65): warning: variable "row" was declared but never referenced
+
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+13:30:20 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+13:31:06 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+13:32:48 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(56): warning: variable "row" was declared but never referenced
+
+../main.cu(66): error: expression must have pointer-to-object type
+
+../main.cu(67): error: expression must have pointer-to-object type
+
+../main.cu(68): error: expression must have pointer-to-object type
+
+3 errors detected in the compilation of "../main.cu".
+subdir.mk:15: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+13:33:23 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(56): warning: variable "row" was declared but never referenced
+
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+13:33:36 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+13:34:11 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(56): warning: variable "row" was declared but never referenced
+
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+13:34:27 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+13:41:25 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(59): error: argument of type "png_bytep *" is incompatible with parameter of type "char *"
+
+1 error detected in the compilation of "../main.cu".
+subdir.mk:15: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+13:41:47 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(59): error: argument of type "png_bytep *" is incompatible with parameter of type "char *"
+
+1 error detected in the compilation of "../main.cu".
+subdir.mk:15: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+13:42:00 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+13:42:05 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+13:44:49 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+13:45:42 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+14:20:12 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(25): error: identifier "row" is undefined
+
+1 error detected in the compilation of "../main.cu".
+make: *** [main.o] Error 1
+subdir.mk:15: recipe for target 'main.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+14:20:24 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+14:22:39 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+14:24:42 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+14:28:36 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(65): error: expected a ";"
+
+../main.cu(66): error: identifier "maxGridSize" is undefined
+
+../main.cu(67): error: expected a ";"
+
+../main.cu(69): error: identifier "maxBlockSize" is undefined
+
+../main.cu(70): error: expected a ";"
+
+../main.cu(76): error: identifier "gridSize" is undefined
+
+6 errors detected in the compilation of "../main.cu".
+subdir.mk:15: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+14:28:53 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(65): error: expected a ";"
+
+../main.cu(66): error: identifier "maxGridSize" is undefined
+
+../main.cu(69): error: argument of type "unsigned int *" is incompatible with parameter of type "int *"
+
+../main.cu(70): error: argument of type "unsigned int *" is incompatible with parameter of type "int *"
+
+4 errors detected in the compilation of "../main.cu".
+subdir.mk:15: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+14:29:22 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(65): error: expected a ";"
+
+../main.cu(66): error: identifier "maxGridSize" is undefined
+
+../main.cu(69): error: argument of type "unsigned int *" is incompatible with parameter of type "int *"
+
+3 errors detected in the compilation of "../main.cu".
+make: *** [main.o] Error 1
+subdir.mk:15: recipe for target 'main.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+14:29:34 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(65): error: expected a ";"
+
+../main.cu(66): error: identifier "maxGridSize" is undefined
+
+2 errors detected in the compilation of "../main.cu".
+make: *** [main.o] Error 1
+subdir.mk:15: recipe for target 'main.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+14:30:01 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+14:31:08 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+14:35:48 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+14:37:17 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+14:37:36 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+14:38:00 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+14:38:44 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+14:39:54 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+14:40:42 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+14:51:51 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(68): error: no instance of overloaded function "std::min" matches the argument list
+            argument types are: (int, unsigned int)
+
+1 error detected in the compilation of "../main.cu".
+subdir.mk:15: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+14:52:25 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(69): error: no instance of overloaded function "std::min" matches the argument list
+            argument types are: (int, unsigned int)
+
+1 error detected in the compilation of "../main.cu".
+subdir.mk:15: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+14:52:44 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+14:54:00 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+14:55:38 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+15:03:49 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(30): warning: integer conversion resulted in a change of sign
+
+../main.cu(30): warning: integer conversion resulted in a change of sign
+
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+15:04:43 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+15:06:35 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+15:06:42 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+15:07:50 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+15:08:12 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+15:09:41 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+15:11:01 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(68): warning: variable "maxThreadsPerBlock" was declared but never referenced
+
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+15:11:11 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+15:15:10 **** Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+15:15:24 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+15:15:53 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+15:16:17 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+16:24:51 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+16:42:53 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+16:43:28 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(77): error: argument of type "unsigned char *" is incompatible with parameter of type "char *"
+
+1 error detected in the compilation of "../main.cu".
+make: *** [main.o] Error 1
+subdir.mk:15: recipe for target 'main.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+16:43:59 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(28): error: a value of type "char *" cannot be used to initialize an entity of type "unsigned char *"
+
+../main.cu(55): error: a value of type "unsigned char *" cannot be used to initialize an entity of type "char *"
+
+2 errors detected in the compilation of "../main.cu".
+make: *** [main.o] Error 1
+subdir.mk:15: recipe for target 'main.o' failed
+"make all" terminated with exit code 2. Build might be incomplete.
+16:44:22 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+../main.cu(55): error: a value of type "unsigned char *" cannot be used to initialize an entity of type "char *"
+
+1 error detected in the compilation of "../main.cu".
+subdir.mk:15: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+16:44:43 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+16:45:43 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+17:15:10 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+17:15:24 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+17:17:16 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+12:59:21 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+13:02:06 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+13:14:50 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+13:21:15 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+13:21:26 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+13:23:30 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+14:44:46 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+15:10:20 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+13:14:06 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main-orig.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main-orig.o" "../main-orig.cu"
+Finished building: ../main-orig.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main-orig.o ./main.o   -lpng
+./main.o: In function `main':
+/home/nvidia/eclipse-workspace/cuda-greyscale/Debug/../main.cu:38: multiple definition of `main'
+./main-orig.o:/home/nvidia/eclipse-workspace/cuda-greyscale/Debug/../main-orig.cu:38: first defined here
+./main.o: In function `greyscale(int, int, char*)':
+/home/nvidia/eclipse-workspace/cuda-greyscale/Debug/../main.cu:22: multiple definition of `greyscale(int, int, char*)'
+./main-orig.o:/home/nvidia/eclipse-workspace/cuda-greyscale/Debug/../main-orig.cu:22: first defined here
+./main.o: In function `__device_stub__Z9greyscaleiiPc(int, int, char*)':
+makefile:23: recipe for target 'cuda-greyscale' failed
+/tmp/tmpxft_000012ca_00000000-6_main.cudafe1.stub.c:13: multiple definition of `__device_stub__Z9greyscaleiiPc(int, int, char*)'
+./main-orig.o:/tmp/tmpxft_00001685_00000000-6_main-orig.cudafe1.stub.c:13: first defined here
+collect2: error: ld returned 1 exit status
+make: *** [cuda-greyscale] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+13:16:38 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main-orig.o ./main.o   -lpng
+./main.o: In function `main':
+/home/nvidia/eclipse-workspace/cuda-greyscale/Debug/../main.cu:38: multiple definition of `main'
+./main-orig.o:/home/nvidia/eclipse-workspace/cuda-greyscale/Debug/../main-orig.cu:38: first defined here
+./main.o: In function `greyscale(int, int, char*)':
+/home/nvidia/eclipse-workspace/cuda-greyscale/Debug/../main.cu:22: multiple definition of `greyscale(int, int, char*)'
+./main-orig.o:/home/nvidia/eclipse-workspace/cuda-greyscale/Debug/../main-orig.cu:22: first defined here
+./main.o: In function `__device_stub__Z9greyscaleiiPc(int, int, char*)':
+makefile:23: recipe for target 'cuda-greyscale' failed
+/tmp/tmpxft_000012ca_00000000-6_main.cudafe1.stub.c:13: multiple definition of `__device_stub__Z9greyscaleiiPc(int, int, char*)'
+./main-orig.o:/tmp/tmpxft_00001685_00000000-6_main-orig.cudafe1.stub.c:13: first defined here
+collect2: error: ld returned 1 exit status
+make: *** [cuda-greyscale] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+13:16:51 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+13:18:34 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+13:41:23 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+13:59:36 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+Building file: ../main.cu
+Invoking: NVCC Compiler
+/usr/local/cuda/bin/nvcc --device-debug --debug -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -ccbin g++ -c -o "main.o" "../main.cu"
+Finished building: ../main.cu
+ 
+Building target: cuda-greyscale
+Invoking: NVCC linker
+/usr/local/cuda/bin/nvcc --cudart=static -ccbin g++ -gencode arch=compute_52,code=sm_52 -gencode arch=compute_52,code=compute_52 -o "cuda-greyscale"  ./main.o   -lpng
+Finished building target: cuda-greyscale
+ 
+14:00:03 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+14:00:06 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+14:01:14 **** Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.
+14:51:52 **** Incremental Build of configuration Debug for project cuda-greyscale ****
+make all 
+make: Nothing to be done for 'all'.

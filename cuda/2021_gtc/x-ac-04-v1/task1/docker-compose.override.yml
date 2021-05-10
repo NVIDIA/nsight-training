@@ -1,0 +1,14 @@
+version: '2.3'
+
+services:
+
+  lab:
+    build: .
+
+  correctness:
+    build: ./correctness
+
+  nginx:
+    build: ./nginx
+    ports:
+      - $DEV_NGINX_PORT:80

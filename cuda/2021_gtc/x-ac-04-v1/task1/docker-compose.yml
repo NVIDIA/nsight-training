@@ -1,0 +1,20 @@
+version: '2.3'
+
+services:
+
+  lab:
+    runtime: nvidia
+    privileged: true
+    cap_add:
+      - SYS_ADMIN
+    volumes:
+      - ./task/:/dli/task/
+
+  correctness:
+    runtime: nvidia
+    privileged: true
+
+  nginx:
+    depends_on:
+      - lab
+      - correctness
