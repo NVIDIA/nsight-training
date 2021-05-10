@@ -1,0 +1,20 @@
+/*!
+
+\mainpage APSM Library Index Page
+
+\tableofcontents
+
+\section intro_sec Introduction
+
+For more information see page \ref apsm_detection.
+For more information see page \ref apsm_train.
+
+\subsection subsection1 The first subsection
+
+Next subsection will be \ref subsection2.
+
+\subsection subsection2 The second subsection
+
+Only some content..
+
+*/
