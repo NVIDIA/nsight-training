@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;common&apos;" deleteContents="true" description="Delete resource &apos;common&apos;" element1="/common" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1615216615136"/>&#x0A;<refactoring comment="Delete resource &apos;cuda-greyscale/Debug&apos;" deleteContents="false" description="Delete resource &apos;cuda-greyscale/Debug&apos;" element1="/cuda-greyscale/Debug" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1615468608251"/>
+</session>

@@ -1,0 +1,26 @@
+/*
+ * common.h
+ *
+ *  Created on: Mar 8, 2021
+ *      Author: nvidia
+ */
+
+#ifndef INCLUDE_COMMON_COMMON_H_
+#define INCLUDE_COMMON_COMMON_H_
+
+struct png_image
+{
+    int width, height;
+    png_byte color_type;
+    png_byte bit_depth;
+
+    png_structp png_ptr;
+    png_infop info_ptr;
+    int number_of_passes;
+    png_bytep * row_pointers;
+};
+
+void write_png_file(char* file_name, png_image& image);
+void read_png_file(char* file_name, png_image& image);
+
+#endif /* INCLUDE_COMMON_COMMON_H_ */

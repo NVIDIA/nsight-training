@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Exec=/usr/local/eclipse/eclipse
+Icon=/usr/local/eclipse/icon.xpm
+Terminal=false
+Categories=Development
+Name=Eclipse
+Comment=Run Eclipse for C++

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+	<configuration id="com.nvidia.cuda.toolchain.linux.configuration.debug.818907062" name="Debug">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider copy-of="extension" id="org.eclipse.cdt.ui.UserLanguageSettingsProvider"/>
+			<provider-reference id="org.eclipse.cdt.core.ReferencedProjectsLanguageSettingsProvider" ref="shared-provider"/>
+			<provider-reference id="org.eclipse.cdt.managedbuilder.core.MBSLanguageSettingsProvider" ref="shared-provider"/>
+			<provider class="com.nvidia.cuda.toolchain.internal.NVCCBuiltinSpecsDetector" console="false" env-hash="18448171402532" id="com.nvidia.cuda.toolchain.CUDACProvider" keep-relative-paths="false" name="Nvcc Builtins provider" parameter="${COMMAND} ${FLAGS} -E -Xcompiler -P -Xcompiler -v -Xcompiler -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
+				<language-scope id="com.nvidia.cuda.ui.CUDALanguage"/>
+			</provider>
+		</extension>
+	</configuration>
+	<configuration id="com.nvidia.cuda.toolchain.linux.configuration.release.1638011652" name="Release">
+		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
+			<provider copy-of="extension" id="org.eclipse.cdt.ui.UserLanguageSettingsProvider"/>
+			<provider-reference id="org.eclipse.cdt.core.ReferencedProjectsLanguageSettingsProvider" ref="shared-provider"/>
+			<provider-reference id="org.eclipse.cdt.managedbuilder.core.MBSLanguageSettingsProvider" ref="shared-provider"/>
+			<provider class="com.nvidia.cuda.toolchain.internal.NVCCBuiltinSpecsDetector" console="false" env-hash="18448171402532" id="com.nvidia.cuda.toolchain.CUDACProvider" keep-relative-paths="false" name="Nvcc Builtins provider" parameter="${COMMAND} ${FLAGS} -E -Xcompiler -P -Xcompiler -v -Xcompiler -dD &quot;${INPUTS}&quot;" prefer-non-shared="true">
+				<language-scope id="com.nvidia.cuda.ui.CUDALanguage"/>
+			</provider>
+		</extension>
+	</configuration>
+</project>

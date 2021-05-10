@@ -1,0 +1,33 @@
+{
+  "data": {
+    "layout-restorer:data": {
+      "main": {
+        "dock": {
+          "type": "tab-area",
+          "currentIndex": 0,
+          "widgets": []
+        },
+        "mode": "multiple-document"
+      },
+      "left": {
+        "collapsed": false,
+        "current": "running-sessions",
+        "widgets": [
+          "filebrowser",
+          "running-sessions",
+          "command-palette",
+          "jp-property-inspector",
+          "tab-manager",
+          "extensionmanager.main-view"
+        ]
+      },
+      "right": {
+        "collapsed": true,
+        "widgets": []
+      }
+    }
+  },
+  "metadata": {
+    "id": "/lab"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "data": {
+    "layout-restorer:data": {
+      "main": {
+        "dock": {
+          "type": "tab-area",
+          "currentIndex": 0,
+          "widgets": [
+            "notebook:01_Introduction/Introduction.ipynb"
+          ]
+        },
+        "mode": "multiple-document",
+        "current": "notebook:01_Introduction/Introduction.ipynb"
+      },
+      "left": {
+        "collapsed": true,
+        "widgets": [
+          "filebrowser",
+          "running-sessions",
+          "command-palette",
+          "jp-property-inspector",
+          "tab-manager",
+          "extensionmanager.main-view"
+        ]
+      },
+      "right": {
+        "collapsed": true,
+        "widgets": []
+      }
+    },
+    "file-browser-filebrowser:cwd": {
+      "path": ""
+    },
+    "notebook:01_Introduction/Introduction.ipynb": {
+      "data": {
+        "path": "01_Introduction/Introduction.ipynb",
+        "factory": "Notebook"
+      }
+    },
+    "@jupyterlab/settingeditor-extension:plugin": {
+      "sizes": [
+        0.19727403156384504,
+        0.802725968436155
+      ],
+      "container": {
+        "plugin": "@wallneradam/custom_css:plugin",
+        "sizes": [
+          0.5,
+          0.5
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "id": "/lab"
+  }
+}

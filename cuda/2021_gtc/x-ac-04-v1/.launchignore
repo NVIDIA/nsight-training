@@ -1,0 +1,9 @@
+Dockerfile
+.launchignore
+.dockerignore
+.gitignore
+vm_properties.json
+entrypoint.sh
+**/.nfs**
+**/.ipynb_checkpoints
+lab/task/encrypted
