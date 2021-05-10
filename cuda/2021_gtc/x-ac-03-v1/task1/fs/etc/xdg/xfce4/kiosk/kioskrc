@@ -1,0 +1,11 @@
+[xfce4-panel]
+CustomizePanel=NONE
+
+[xfce4-session]
+SaveSession=NONE
+CustomizeSplash=NONE
+CustomizeChooser=NONE
+CustomizeLogout=NONE
+CustomizeCompatibility=NONE
+Shutdown=NONE
+CustomizeSecurity=NONE

@@ -1,0 +1,10 @@
+/cuda/2021_gtc/x-ac-03-v1/task1/task/nsys/application/data/MNIST/processed/test.pt filter=lfs diff=lfs merge=lfs -text
+/cuda/2021_gtc/x-ac-03-v1/task1/task/nsys/application/data/MNIST/processed/training.pt filter=lfs diff=lfs merge=lfs -text
+/cuda/2021_gtc/x-ac-03-v1/task1/task/nsys/application/data/MNIST/raw/t10k-images-idx3-ubyte filter=lfs diff=lfs merge=lfs -text
+/cuda/2021_gtc/x-ac-03-v1/task1/task/nsys/application/data/MNIST/raw/train-images-idx3-ubyte filter=lfs diff=lfs merge=lfs -text
+/cuda/2021_gtc/x-ac-03-v1/task1/task/nsys/application/data/MNIST/raw/train-images-idx3-ubyte.gz filter=lfs diff=lfs merge=lfs -text
+/cuda/2021_gtc/x-ac-03-v1/task1/task/nsys/precollected_reports/baseline.qdrep filter=lfs diff=lfs merge=lfs -text
+/cuda/2021_gtc/x-ac-03-v1/task1/task/nsys/precollected_reports/baseline_nvtx.qdrep filter=lfs diff=lfs merge=lfs -text
+/cuda/2021_gtc/x-ac-03-v1/task1/task/nsys/precollected_reports/firstOptimization.qdrep filter=lfs diff=lfs merge=lfs -text
+/cuda/2021_gtc/x-ac-03-v1/task1/task/nsys/precollected_reports/secondOptimization.qdrep filter=lfs diff=lfs merge=lfs -text
+/cuda/2021_gtc/x-ac-03-v1/task1/task/nsys/precollected_reports/thirdOptimization.qdrep filter=lfs diff=lfs merge=lfs -text

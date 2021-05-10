@@ -1,0 +1,18 @@
+# (1) This file is used to set configurations only used in production. If you
+# look at `production_launch.sh` you'll see that we explicitly use this file.
+
+version: '2.3'
+
+services:
+
+# (2) To prevent name collisions, be sure to set the course id as project name in `.env`
+  lab:
+    environment:
+      # Secure student access with a token.
+      # See entrypoint.sh for how this is used.
+      - JUPYTER_TOKEN
+
+  nginx:
+    # In production, nginx should be accessible via port `80`.
+    ports:
+      - 80:80
