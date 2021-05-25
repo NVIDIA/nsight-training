@@ -811,7 +811,7 @@ __device__ void kernel_apsm_detection_gaussian_balanced( cg::thread_block& bg, c
                 for( int bid=tid; bid<TKP::BASIS_PER_BATCH; bid += WARP_SIZE )
                 {
                     const int basis_idx = basis_offset + bid;
-                    const apsm_fp basis_oob = (basis_idx < basisLength) ? 1.0 : 0.0;
+                    const apsm_fp basis_oob = (basis_idx < gaussianLength) ? 1.0 : 0.0;
                     apsm_fp* basis_sh = &shmem_basis[ bid * (WARP_SIZE + TKP::PADDING) ];
 
                     const apsm_fp* basis_input = basis.getRawPointer( basis_idx );
