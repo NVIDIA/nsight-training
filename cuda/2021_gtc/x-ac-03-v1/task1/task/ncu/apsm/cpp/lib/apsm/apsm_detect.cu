@@ -816,7 +816,10 @@ __device__ void kernel_apsm_detection_gaussian_balanced( cg::thread_block& bg, c
 
                     const apsm_fp* basis_input = basis.getRawPointer( basis_idx );
                     for( int idx = 0; idx < WARP_SIZE; idx ++ )
-                            basis_sh[ idx ] = basis_oob * dim_oob * basis_input[ dim_offset + idx ];
+                    {
+                        const apsm_fp dim_oob2 = (dim_offset + idx < linearLength ) ? 1.0 : 0.0;
+                        basis_sh[ idx ] = basis_oob * dim_oob2 * basis( basis_idx, dim_offset + idx );
+                    }
                 }
             }
 #endif
@@ -830,8 +833,11 @@ __device__ void kernel_apsm_detection_gaussian_balanced( cg::thread_block& bg, c
 
                 #pragma unroll
                 for( int idx=tg.meta_group_rank(); idx < WARP_SIZE; idx += tg.meta_group_size() )
-                    basis_sh[ idx ] = basis_oob * dim_oob * basis(basis_idx, dim_offset + idx );
-            }
+                {
+                    const apsm_fp dim_oob2 = (dim_offset + idx < linearLength ) ? 1.0 : 0.0;
+                    basis_sh[ idx ] = basis_oob * dim_oob2 * basis( basis_idx, dim_offset + idx );
+                }
+        }
 #endif
             // tell all tiles (samples) to wait for data to be available.
             bg.sync();
@@ -843,7 +849,7 @@ __device__ void kernel_apsm_detection_gaussian_balanced( cg::thread_block& bg, c
             {
                 apsm_fp* basis_sh = &shmem_basis[ bid * (WARP_SIZE + TKP::PADDING) ];
                 #pragma unroll
-                for ( int dim = 0; dim < WARP_SIZE; dim++ )
+                for ( int dim = 0; dim < min(WARP_SIZE,linearLength); dim++ )
                 {
                     apsm_fp dist_element = basis_sh[ dim ] - data[ dim ];
                     exp_argument[ bid ] += dist_element * dist_element;
