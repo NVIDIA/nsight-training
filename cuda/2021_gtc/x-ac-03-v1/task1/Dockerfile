@@ -42,12 +42,12 @@ apt install -y python3-pip
 # Note: when changed, update in nsight container, too
 WORKDIR /build
 RUN rm -rf /opt/nvidia/nsight-compute /opt/nvidia/nsight-systems
-ADD https://developer.download.nvidia.com/devtools/repos/ubuntu1804/amd64/nsight-compute-2020.3.1_2020.3.1.4-1_amd64.deb .
+ADD https://developer.download.nvidia.com/devtools/repos/ubuntu1804/amd64/nsight-compute-2021.2.1_2021.2.1.2-1_amd64.deb .
 ADD https://developer.download.nvidia.com/devtools/repos/ubuntu1804/amd64/NsightSystems-linux-public-2021.2.1.58-642947b.deb .
-RUN apt install -y ./nsight-compute-2020.3.1_2020.3.1.4-1_amd64.deb
+RUN apt install -y ./nsight-compute-2021.2.1_2021.2.1.2-1_amd64.deb
 RUN apt install -y ./NsightSystems-linux-public-2021.2.1.58-642947b.deb
 
-ENV PATH=/opt/nvidia/nsight-systems/2021.2.1/bin:/opt/nvidia/nsight-compute/2020.3.1:/usr/local/cuda-11.2/bin:${PATH}
+ENV PATH=/opt/nvidia/nsight-systems/2021.2.1/bin:/opt/nvidia/nsight-compute/2021.2.1:/usr/local/cuda-11.2/bin:${PATH}
 
 RUN apt clean -y
 RUN apt autoclean -y
