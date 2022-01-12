@@ -2,7 +2,7 @@
 
 This lab teaches how to use NVIDIA's Nsight tools for analyzing and optimizing CUDA applications. Attendees will be using Nsight Systems to analyze the overall application structure and explore parallelization opportunities. Nsight Compute will be used to analyze and optimize CUDA kernels, using an online machine learning code for 5G.
 
-This repository contains training content for the [NVIDIA Nsight GTC 2021 lab](https://gtc21.event.nvidia.com/media/Optimizing%20CUDA%20Machine%20Learning%20Codes%20with%20Nsight%20Profiling%20Tools%20%5BT2503%5D/1_69ajhswh). Follow the link to watch the session recording on the GTC website.
+This repository contains training content for the [NVIDIA Nsight GTC 2021 lab](https://events.rainfocus.com/widget/nvidia/nvidiagtc/sessioncatalog?search=dlit1605). Follow the link to watch the session recording on the GTC website, or take the training by simply using the instructions in the jupyter notebooks.
 
 ## Docker Compose Usage
 
