@@ -43,11 +43,11 @@ apt install -y python3-pip
 WORKDIR /build
 RUN rm -rf /opt/nvidia/nsight-compute /opt/nvidia/nsight-systems
 ADD https://developer.download.nvidia.com/devtools/repos/ubuntu1804/amd64/nsight-compute-2021.2.1_2021.2.1.2-1_amd64.deb .
-ADD https://developer.download.nvidia.com/devtools/repos/ubuntu1804/amd64/NsightSystems-linux-public-2021.2.1.58-642947b.deb .
+ADD https://developer.download.nvidia.com/devtools/repos/ubuntu1804/amd64/NsightSystems-linux-public-2021.4.1.73-08591f7.deb .
 RUN apt install -y ./nsight-compute-2021.2.1_2021.2.1.2-1_amd64.deb
-RUN apt install -y ./NsightSystems-linux-public-2021.2.1.58-642947b.deb
+RUN apt install -y ./NsightSystems-linux-public-2021.4.1.73-08591f7.deb
 
-ENV PATH=/opt/nvidia/nsight-systems/2021.2.1/bin:/opt/nvidia/nsight-compute/2021.2.1:/usr/local/cuda-11.2/bin:${PATH}
+ENV PATH=/opt/nvidia/nsight-systems/2021.4.1/bin:/opt/nvidia/nsight-compute/2021.2.1:/usr/local/cuda-11.2/bin:${PATH}
 
 RUN apt clean -y
 RUN apt autoclean -y
@@ -55,6 +55,7 @@ RUN apt autoremove -y --purge
 RUN dpkg -l | grep 'nvidia-cuda-toolkit\|qtbase5-dev\|libuhd-dev\|srslte-dev\|libliquid-dev'
 
 # Install Pytorch dependencies for nsys
+RUN python3 -m pip install pip==19.3.1
 RUN python3 -m pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html
 # Setup config file option for nsys to avoid diagnostic error on events lost
 RUN mkdir -p "$(dirname "$(nsys -z)")"

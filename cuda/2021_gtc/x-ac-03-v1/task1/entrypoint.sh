@@ -6,6 +6,11 @@
 # For more details see `docker-compose.production.yml`,
 # `docker-compose.override.yml`, and
 # `nginx.conf`.
+cd /dli/assessment
+./assessment_runner &
+cd -
+
+nvidia-smi -pm 1
 
 jupyter lab \
         --ip 0.0.0.0                               `# Run on localhost` \

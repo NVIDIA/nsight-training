@@ -69,35 +69,36 @@ class Net(nn.Module):
 
 def train(args, model, device, train_loader, optimizer, epoch):
     model.train()
-    nvtx.range_push("Data loading");
-    for batch_idx, (data, target) in enumerate(train_loader):
-        nvtx.range_pop();# Data loading
-        nvtx.range_push("Batch " + str(batch_idx))
-
-        nvtx.range_push("Copy to device")
-        data, target = data.to(device), target.to(device)
-        nvtx.range_pop() # Copy to device
-
-        nvtx.range_push("Forward pass")
-        optimizer.zero_grad()
-        output = model(data)
-        loss = F.nll_loss(output, target)
-        nvtx.range_pop() # Forward pass
-
-        nvtx.range_push("Backward pass")
-        loss.backward()
-        optimizer.step()
-        nvtx.range_pop() # Backward pass
-
-        nvtx.range_pop() # Batch
-        if batch_idx % args.log_interval == 0:
-            print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
-                epoch, batch_idx * len(data), len(train_loader.dataset),
-                100. * batch_idx / len(train_loader), loss.item()))
-            if args.dry_run:
-                break
+    with torch.autograd.profiler.emit_nvtx():
         nvtx.range_push("Data loading");
-    nvtx.range_pop(); # Data loading
+        for batch_idx, (data, target) in enumerate(train_loader):
+            nvtx.range_pop();# Data loading
+            nvtx.range_push("Batch " + str(batch_idx))
+
+            nvtx.range_push("Copy to device")
+            data, target = data.to(device), target.to(device)
+            nvtx.range_pop() # Copy to device
+
+            nvtx.range_push("Forward pass")
+            optimizer.zero_grad()
+            output = model(data)
+            loss = F.nll_loss(output, target)
+            nvtx.range_pop() # Forward pass
+
+            nvtx.range_push("Backward pass")
+            loss.backward()
+            optimizer.step()
+            nvtx.range_pop() # Backward pass
+
+            nvtx.range_pop() # Batch
+            if batch_idx % args.log_interval == 0:
+                print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
+                    epoch, batch_idx * len(data), len(train_loader.dataset),
+                    100. * batch_idx / len(train_loader), loss.item()))
+                if args.dry_run:
+                    break
+            nvtx.range_push("Data loading");
+        nvtx.range_pop(); # Data loading
 
 
 def test(model, device, test_loader):

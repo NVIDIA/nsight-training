@@ -7,6 +7,11 @@ services:
 
 # (2) To prevent name collisions, be sure to set the course id as project name in `.env`
   lab:
+    # In production we need to pull down an image from a CSP-specific container
+    # repository. This value is a placeholder, and is replaced by automated builds.
+    image: nvidia/cuda
+
+
     environment:
       # Secure student access with a token.
       # See entrypoint.sh for how this is used.

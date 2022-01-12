@@ -1,9 +1,9 @@
 [Desktop Entry]
 Type=Application
-Name=NVIDIA Nsight Systems 2021.2.1
+Name=NVIDIA Nsight Systems 2021.4.1
 GenericName=NVIDIA Nsight Systems
-Icon=/opt/nvidia/nsight-systems/2021.2.1/host-linux-x64/nsys-ui.png
-Exec=/opt/nvidia/nsight-systems/2021.2.1/host-linux-x64/nsys-ui
+Icon=/opt/nvidia/nsight-systems/2021.4.1/host-linux-x64/nsys-ui.png
+Exec=/opt/nvidia/nsight-systems/2021.4.1/host-linux-x64/nsys-ui
 Keywords=nvidia;system;profiler;
 X-AppInstall-Keywords=nvidia;system;profiler;
 X-GNOME-Keywords=nvidia;system;profiler;

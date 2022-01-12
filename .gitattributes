@@ -9,3 +9,8 @@
 /cuda/2021_gtc/x-ac-03-v1/task1/task/nsys/precollected_reports/secondOptimization.qdrep filter=lfs diff=lfs merge=lfs -text
 /cuda/2021_gtc/x-ac-03-v1/task1/task/nsys/precollected_reports/thirdOptimization.qdrep filter=lfs diff=lfs merge=lfs -text
 /cuda/2021_gtc/x-ac-04-v1/task1/correctness/fs/home/nvidia/eclipse-workspace/.metadata/.plugins/org.eclipse.cdt.core/cuda-greyscale.1615210097407.pdom filter=lfs diff=lfs merge=lfs -text
+/cuda/2021_gtc/x-ac-03-v1/task1/task/nsys/precollected_reports/baseline.nsys-rep filter=lfs diff=lfs merge=lfs -text
+/cuda/2021_gtc/x-ac-03-v1/task1/task/nsys/precollected_reports/baseline_nvtx.nsys-rep filter=lfs diff=lfs merge=lfs -text
+/cuda/2021_gtc/x-ac-03-v1/task1/task/nsys/precollected_reports/firstOptimization.nsys-rep filter=lfs diff=lfs merge=lfs -text
+/cuda/2021_gtc/x-ac-03-v1/task1/task/nsys/precollected_reports/secondOptimization.nsys-rep filter=lfs diff=lfs merge=lfs -text
+/cuda/2021_gtc/x-ac-03-v1/task1/task/nsys/precollected_reports/thirdOptimization.nsys-rep filter=lfs diff=lfs merge=lfs -text
