@@ -8,7 +8,7 @@ This repository contains the source and project files necessary to try this lab 
 - Step 3-4: Application-level performance optimization with Nsight Systems: https://developer.nvidia.com/gtc/2020/video/t21395-3
 - Step 5-7: Kernel-level performance optimization with Nsight Compute: https://developer.nvidia.com/gtc/2020/video/t21395-4
 
-The detailed steps, including all requirements and setup instructions, are in the [DevTools GTC 2020 Lab Content pdf](cuda/2020_gtc/DevTools_GTC_2020_Lab_Content.pdf).
+The detailed steps, including all requirements and setup instructions, are in the [DevTools GTC 2020 Lab Content pdf](DevTools_GTC_2020_Lab_Content.pdf).
 
 # Story
 The exercise represents a cloud-based image classification application. It contains a database
