@@ -13,6 +13,7 @@ The collection of sample scripts currently contains the following Jupyter Notebo
 
 * `Breakdown_metrics.ipynb`: Find and iterate over breakdown metrics
 * `Kernel_name_based_filtering.ipynb`: Filter `IAction` objects w.r.t. their name base
+* `Metric_attributes.ipynb`: Query various properties of `IMetric` objects
 * `NVTX_support.ipynb`: Filter kernels based on NVTX ranges and retrieve NVTX event attributes
 * `Opcode_instanced_metrics.ipynb`: Traverse opcode-instanced metrics along with their SASS instruction types
 * `Source_correlated_metrics.ipynb`: Find and analyze metrics that are correlated with SASS/CUDA-C code
