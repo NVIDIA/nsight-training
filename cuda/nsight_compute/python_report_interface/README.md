@@ -18,6 +18,10 @@ The collection of sample scripts currently contains the following Jupyter Notebo
 * `Opcode_instanced_metrics.ipynb`: Traverse opcode-instanced metrics along with their SASS instruction types
 * `Source_correlated_metrics.ipynb`: Find and analyze metrics that are correlated with SASS/CUDA-C code
 
+Below scripts cover more advanced content by extending the topics in the previous notebooks:
+
+* `Aggregate_instruction_statistics.ipynb`: Combines and extends `Opcode_instanced_metrics` and `Source_correlated_metrics`
+
 ## Importing `ncu_report`
 
 When executing the sample notebooks, make sure you can import the Python module `ncu_report`.
