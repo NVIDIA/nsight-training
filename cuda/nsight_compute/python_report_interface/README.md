@@ -16,6 +16,7 @@ The collection of sample scripts currently contains the following Jupyter Notebo
 * `Metric_attributes.ipynb`: Query various properties of `IMetric` objects
 * `NVTX_support.ipynb`: Filter kernels based on NVTX ranges and retrieve NVTX event attributes
 * `Opcode_instanced_metrics.ipynb`: Traverse opcode-instanced metrics along with their SASS instruction types
+* `Report2Json_conversion.ipynb`: Convert an NCU Report to JSON
 * `Source_correlated_metrics.ipynb`: Find and analyze metrics that are correlated with SASS/CUDA-C code
 
 Below scripts cover more advanced content by extending the topics in the previous notebooks:
