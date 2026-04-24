@@ -1,0 +1,12 @@
+ {
+    "ui": {
+        "enabled": true,
+        "host": "$DOCKER_HOST",
+ 	"defaultStreamerAddress": "http://%HOSTNAME%:8080"
+    },
+    "ncu": {
+        "installationPath": "/opt/nvidia/nsight-compute/2026.1.0",
+	"args": "--set full"
+    },
+    "outDir": "/dli/task/ncu/reports"
+}

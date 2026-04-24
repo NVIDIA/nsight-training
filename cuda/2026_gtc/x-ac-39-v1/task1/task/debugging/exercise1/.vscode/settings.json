@@ -1,0 +1,11 @@
+{
+        // Add the path to the virtual environment to the python.venvPath environment variable.
+        "python.venvPath": "/opt/venv",
+        "python-envs.pythonProjects": [
+                {
+                        "path": "",
+                        "envManager": "ms-python.python:venv",
+                        "packageManager": "ms-python.python:venv"
+                }
+        ]
+}

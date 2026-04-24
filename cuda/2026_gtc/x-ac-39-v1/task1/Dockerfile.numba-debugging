@@ -1,0 +1,100 @@
+FROM nvcr.io/nvidia/cuda:13.2.0-devel-ubuntu24.04
+
+# Set general environment variables
+# Note that /usr/local/cuda/bin is already in the PATH environment variable from the base image
+ENV SHELL="/bin/bash"
+
+# Install basic packages first.
+WORKDIR /tmp
+
+RUN apt-get update -y
+RUN apt-get install -y --no-install-recommends \
+    build-essential \
+    cmake \
+    curl \
+    git \
+    software-properties-common \
+    unzip \
+    wget \
+    yasm
+
+#
+# Setup the python virtual environment
+#
+ENV VIRTUAL_ENV=/opt/venv
+ENV PATH="${VIRTUAL_ENV}/bin:${PATH}"
+
+RUN apt-get install -y \
+    python3 \
+    python3-dev \
+    python3-pip \
+    python3-venv
+
+RUN python3 -m venv ${VIRTUAL_ENV}
+RUN ${VIRTUAL_ENV}/bin/pip install --upgrade pip
+
+#
+# Setup the Numba debugging environment
+#
+RUN ${VIRTUAL_ENV}/bin/pip install \
+    cuda-python \
+    cuda-core \
+    cuda-bindings \
+    cuda-pathfinder
+
+RUN ${VIRTUAL_ENV}/bin/pip install \
+    numba \
+    numpy==2.3.5
+
+# Install the released version of Numba CUDA from PyPI
+RUN ${VIRTUAL_ENV}/bin/pip install numba-cuda
+
+#
+# Setup Jupyterlab and its modules
+#
+RUN ${VIRTUAL_ENV}/bin/pip install jupyterlab
+COPY jupyter/ /root/.jupyter/
+
+# Jupyter listens on this port
+# Note: to avoid conflicts, this is different from the Jupyter port in the ncu Dockerfile
+EXPOSE 8889
+
+# Install supporting Python modules for the sharpen1.py example
+RUN ${VIRTUAL_ENV}/bin/pip install \
+    ipywidgets \
+    matplotlib \
+    Pillow
+
+#
+# Install VSCode and its extensions
+#
+WORKDIR /root/vscode
+RUN apt-get install -y ca-certificates
+RUN wget https://code-server.dev/install.sh
+RUN chmod +x install.sh
+RUN ./install.sh
+
+# Install NVIDIA Nsight VSCode Edition extension
+RUN curl -L --compressed -o nvidia.nsight-vscode-edition.vsix \
+  "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/NVIDIA/vsextensions/nsight-vscode-edition/latest/vspackage"
+RUN code-server --install-extension nvidia.nsight-vscode-edition.vsix
+
+# Install the VSCode Python extension
+RUN code-server --install-extension ms-python.python
+
+# Copy in .cuda-gdbinit file
+COPY cuda-gdbinit /root/.cuda-gdbinit
+
+#
+# Create workshop working directory with content (full repo)
+#
+WORKDIR /dli/task
+COPY task/images images
+COPY task/debugging debugging
+
+# Use the VSCode lab notebook for the default
+COPY task/lab-vscode.ipynb lab.ipynb
+
+# Copy Numba debugging entrypoint script to /usr/local/bin
+ADD entrypoint-numba-debugging.sh /usr/local/bin
+ENTRYPOINT ["/usr/local/bin/entrypoint-numba-debugging.sh"]

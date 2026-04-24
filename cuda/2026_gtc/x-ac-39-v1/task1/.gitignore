@@ -1,0 +1,11 @@
+**/data
+**/.ipynb_checkpoints
+*.pt
+__pycache__
+*.tgz
+*.tar
+*.zip
+**/.Trash*
+.env-dev
+
+

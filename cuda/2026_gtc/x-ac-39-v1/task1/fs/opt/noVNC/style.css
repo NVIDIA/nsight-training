@@ -1,0 +1,23 @@
+body {
+    background-image: url(vignette.png);
+    background-color: #ffffff;
+    background-size: 100% 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#vnc-container {
+    width: 100%;
+    max-width: 1600px;
+    height: 100%;
+    max-height: 1200px;
+    margin: 0 auto 0 auto;
+}
+
+iframe#vnc {
+    width: 100%;
+    height: 100%;
+}
