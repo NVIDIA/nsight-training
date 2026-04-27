@@ -1,0 +1,23 @@
+version: '2.3'
+
+services:
+
+  lab:
+    image: <placeholder>
+    environment:
+      # Secure student access with a token.
+      # See entrypoint.sh for how this is used.
+      - JUPYTER_TOKEN
+
+  nsight:
+    # This value is a placeholder, and is replaced by automated builds.
+    image: <placeholder>
+
+  numba-debugging:
+    # This value is a placeholder, and is replaced by automated builds.
+    image: <placeholder>
+
+  nginx:
+    # In production, nginx should be accessible via port `80`.
+    ports:
+      - 80:80

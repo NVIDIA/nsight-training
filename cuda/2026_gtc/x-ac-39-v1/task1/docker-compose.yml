@@ -1,0 +1,92 @@
+# This docker-compose.yml is used for development. At is overwritten
+# in part in production with `docker-compose.production.yml`
+services:
+
+  lab:
+    runtime: nvidia
+    privileged: true
+    cap_add:
+      - SYS_ADMIN
+    volumes:
+      - ./task/ncu/reports:/dli/task/ncu/reports
+      - ./task/ncu/source:/dli/task/ncu/source
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/hostname:/etc/dockerhost # Used to connect to the Nsight Cloud Streamer
+      - ./jupyter/overrides.json:/usr/local/share/jupyter/lab/settings/overrides.json:ro
+    environment:
+      # Secure student access with a token.
+      # See entrypoint.sh for how this is used.
+      - JUPYTER_TOKEN
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8888/api"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
+
+  numba-debugging:
+    runtime: nvidia
+    ports:
+      - "8889:8889"
+      - "8890:8890"
+    privileged: true
+    init: true
+    cap_add:
+      - SYS_ADMIN
+    stdin_open: true
+    tty: true
+    tmpfs: /dev/shm:rw
+    volumes:
+      - ./entrypoint-numba-debugging.sh:/usr/local/bin/entrypoint-numba-debugging.sh
+      - ./task/debugging:/dli/task/debugging
+      - ./jupyter/numba-debugging/workspaces:/root/.jupyter/lab/workspaces
+      - ./jupyter/overrides.json:/opt/venv/share/jupyter/lab/settings/overrides.json:ro
+    environment:
+      NVIDIA_GPU_CAPABILITIES: all
+      TZ: UTC
+      SIZEW: 1920
+      SIZEH: 1080
+      REFRESH: 60
+      DPI: 96
+      CDEPTH: 24
+      VIDEO_PORT: none
+      PASSWD: pass
+      WEBRTC_ENCODER: nvh264enc
+      BASIC_AUTH_PASSWORD: pass
+
+  nsight:
+    runtime: nvidia
+    privileged: true
+    network_mode: "host"
+    volumes:
+      - ./task/ncu/reports:/home/nvidia/reports
+      - ./task/ncu/source:/home/nvidia/source
+    init: true
+    cap_add:
+      - SYS_ADMIN
+    stdin_open: true
+    tty: true
+    tmpfs: /dev/shm:rw
+    environment:
+      NVIDIA_GPU_CAPABILITIES: all
+      TZ: UTC
+      SIZEW: 1920
+      SIZEH: 1080
+      REFRESH: 60
+      DPI: 96
+      CDEPTH: 24
+      VIDEO_PORT: none
+      PASSWD: pass
+      WEBRTC_ENCODER: nvh264enc
+      BASIC_AUTH_PASSWORD: pass
+
+  nginx:
+    image: nginx:1.15.12-alpine
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      lab:
+        condition: service_healthy
+      numba-debugging:
+        condition: service_started
+

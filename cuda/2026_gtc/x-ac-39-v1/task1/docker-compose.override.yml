@@ -1,0 +1,21 @@
+# This docker-compose.yml is used for development. At is overwritten
+# in part in production with `docker-compose.production.yml`
+services:
+
+  lab:
+    build: .
+
+  nsight:
+    build:
+      context: .
+      dockerfile: Dockerfile.nsight
+
+  numba-debugging:
+    build:
+      context: .
+      dockerfile: Dockerfile.numba-debugging
+
+  nginx:
+    # This port is for development only.
+    ports:
+      - $DEV_NGINX_PORT:80

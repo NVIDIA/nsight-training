@@ -1,0 +1,25 @@
+FROM nvcr.io/nvidia/devtools/nsight-streamer-ncu:2025.3.0
+
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update -y && \
+    apt install -y libatomic1 curl ca-certificates
+
+# Install updated nsight-compute and add to PATH
+# Note: when changed, update in lab container, too
+WORKDIR /build
+RUN rm -rf /mnt/host/devtool && \
+    curl -fsSL 'https://developer.download.nvidia.com/devtools/repos/ubuntu2404/amd64/nsight-compute-2026.1.0_2026.1.0.9-1_amd64.deb' \
+        -o /build/nsight-compute.deb && \
+    dpkg-deb -x /build/nsight-compute.deb /build/nsight-deb-root && \
+    mv "$(find /build/nsight-deb-root/opt/nvidia/nsight-compute -mindepth 1 -maxdepth 1 -type d | head -n1)" \
+        /mnt/host/devtool && \
+    rm -rf /build/nsight-deb-root /build/nsight-compute.deb
+ENV PATH=/mnt/host/devtool:/usr/local/cuda/bin:${PATH}
+
+COPY ["NVIDIA Nsight Compute.ini", "/home/nvidia/.config/NVIDIA Corporation/."]
+
+ENV WEB_USERNAME=
+
+RUN apt clean -y
+RUN apt autoclean -y
+RUN apt autoremove -y --purge

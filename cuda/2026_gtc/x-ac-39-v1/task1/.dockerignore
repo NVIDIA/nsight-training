@@ -1,0 +1,9 @@
+# Use this file to ignore anything you don't want built into the
+# Docker image. It should ignore everything .gitignore does, as well
+# as the .git directory itself, which can be large, and is not required inside
+# the Docker image.
+
+.git
+**/data
+**/.ipynb_checkpoints
+**/scripts

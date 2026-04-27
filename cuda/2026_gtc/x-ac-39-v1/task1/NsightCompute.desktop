@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=NVIDIA Nsight Compute 2026.1.0
+GenericName=NVIDIA Nsight Compute
+Icon=/opt/nvidia/nsight-compute/2026.1.0/host/linux-desktop-glibc_2_11_3-x64/ncu-ui.png
+Exec=/opt/nvidia/nsight-compute/2026.1.0/ncu-ui
+Keywords=nvidia;compute;profiler;
+X-AppInstall-Keywords=nvidia;compute;profiler;
+X-GNOME-Keywords=nvidia;compute;profiler;
+Terminal=No
+Categories=Application;Development;

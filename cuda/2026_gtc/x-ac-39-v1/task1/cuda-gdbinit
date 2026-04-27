@@ -1,0 +1,3 @@
+set pagination 0
+set print asm-demangle on
+set print thread-events off
