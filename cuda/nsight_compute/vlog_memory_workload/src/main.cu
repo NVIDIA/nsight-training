@@ -25,6 +25,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <stdint.h>
 
 #include "cuda_helper.cuh"
 #include "lodepng.h"
