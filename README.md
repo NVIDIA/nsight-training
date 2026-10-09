@@ -11,4 +11,5 @@ This repository contains training content for the various NVIDIA Nsight develope
 # Nsight Compute
 * Python Report Interface [jupyter notebook samples](cuda/nsight_compute/python_report_interface)
 * Analysis-Driven Optimization with Nsight Compute blog [source files](cuda/2020_ncu_smem)
+* Nsight VLOG Series: Memory Workload Analysis [source files](cuda/nsight_compute/vlog_memory_workload)
 
